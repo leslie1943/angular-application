@@ -1,0 +1,15 @@
+<p>layout-component works!</p>
+
+<!-- [class.className]=true/false -->
+<div [class.active]="isActive">[class.active]="isActive"</div>
+<div [ngClass]="{active:true}">test</div>
+<div [style.fontSize]="1===1 ? '64px': '32px'">[style.fontSize]</div>
+<div [style.fontSize]="1 > 2 ? '64px': '32px'">[style.fontSize]</div>
+<div [ngStyle]="{fontSize: 1 > 2 ? '64px': '32px'}">ngStyle</div>
+<!-- $event 是默认的事件对象名称 -->
+<button (click)="onSave($event)">Save</button>
+
+<hr>
+<input type="text" [(ngModel)]="username" />
+<p><button (click)="changeUserName()">Change username</button></p>
+<p>{{username}}</p>
