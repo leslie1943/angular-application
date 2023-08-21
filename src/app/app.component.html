@@ -3,3 +3,38 @@
 <!-- data-test=angular -->
 <div [attr.data-test]="'angular'"></div>
 <app-layout-component></app-layout-component>
+
+<br><br><br>
+<h3>Directive</h3>
+<div [appHover]="{bgColor:'green'}">Directive apphover</div>
+<!-- 管道的参数,如果是多个的话使用多个冒号即可 -->
+<!-- <div>{{paragraph | summary:100:200:300}}</div> -->
+
+<br><br><br>
+<h3>Pipe 2</h3>
+<div>{{paragraph | summary:10}}</div>
+
+<br><br><br>
+<h3>Child-Parent Component</h3>
+app-person name="zhangsan" [age]="age" (sendData)="getData($event)"
+<app-person [name]="name" [age]="age" [person]="person" (sendData)="getData($event)"></app-person>
+<button class="btn btn-primary" (click)="change()">Change</button>
+<br><br><br>
+<h3>生命周期</h3>
+<ul>
+    <li>constructor:挂载阶段的生命周期函数只在挂载阶段执行一次,数据更新时不再执行</li>
+    <li>ngOnInit: 在首次接收到输入属性值后执行(@Input),在此处可以执行请求操作</li>
+    <li>ngAfterContentInit: 内容投影初始化完成后调用</li>
+    <li>ngAfterViewInit: 当组件视图渲染完成后调用.</li>
+    <li>ngOnChanges: 当输入属性值发生变化时,初始设置时也会执行一次,
+        <br>顺序优先于ngOnInit.<br>
+        <br>不管多少输入属性同时变化,钩子函数只执行一次,变化的只会存储在参数中 <br>
+        <br>参数类型为SimpleChanges,子属性类型为SimpleChange<br>
+        <br>对于基本数据类型,只要只发生变化就可以被检测到<br>
+        <br>对于引用类型数据来说, 可以检测从一个对象变成另外一个对象this.object = new value, 但是检测不到同一个对象中属性值的变化(this.object.name),但是不影响组件模板更新数据<br>
+    </li>
+    <li>ngDoCheck: 主要用于调试, 主要输入属性发生变化，不管是基础类型还是引用类型，都会执行，不推荐</li>
+    <li>ngAfterContentChecked: 内容投影更新完成后执行</li>
+    <li>ngAfterViewChecked: 组件视图更新完成后执行</li>
+    <li>ngOnDestroy:组件被销毁之前调用, 用于清理操作 </li>
+</ul>

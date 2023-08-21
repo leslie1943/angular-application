@@ -1,15 +1,55 @@
 <p>layout-component works!</p>
 
+<br><br><br>
+<h3>ngClass / ngStyle</h3>
 <!-- [class.className]=true/false -->
 <div [class.active]="isActive">[class.active]="isActive"</div>
 <div [ngClass]="{active:true}">test</div>
-<div [style.fontSize]="1===1 ? '64px': '32px'">[style.fontSize]</div>
-<div [style.fontSize]="1 > 2 ? '64px': '32px'">[style.fontSize]</div>
-<div [ngStyle]="{fontSize: 1 > 2 ? '64px': '32px'}">ngStyle</div>
+<div [style.fontSize]="1===1 ? '12px': '16px'">[style.fontSize]</div>
+<div [style.fontSize]="1 > 2 ? '12px': '16px'">[style.fontSize]</div>
+<div [ngStyle]="{fontSize: 1 > 2 ? '12px': '16px'}">ngStyle</div>
 <!-- $event 是默认的事件对象名称 -->
-<button (click)="onSave($event)">Save</button>
+<button class="btn btn-primary" (click)="onSave($event)">Save</button>
 
-<hr>
+<br><br><br>
+<h3>ngModel</h3>
 <input type="text" [(ngModel)]="username" />
-<p><button (click)="changeUserName()">Change username</button></p>
+<p><button class="btn btn-primary" (click)="changeUserName()">Change username</button></p>
 <p>{{username}}</p>
+
+<p>{{task.person?.name}}</p>
+
+<br><br><br>
+<h3>ngIf</h3>
+
+<div *ngIf="dataList.length > 0; then hasData else noData">
+</div>
+<ng-template #hasData>showdata</ng-template>
+<ng-template #noData>No data</ng-template>
+
+<!-- bool值为true,隐藏元素 -->
+<div [hidden]="dataList.length > 0"> hidden</div>
+<!-- hidden = false : 不隐藏-->
+<div [hidden]="dataList.length == 0"> not hidden</div>
+
+
+<br><br><br>
+<h3>ngFor</h3>
+<div *ngFor="let item of dataList;
+     let i = index;
+     let isEven = even;
+     let isOdd=odd;
+    let isFirst = first;
+     let isLast=last;
+   trackBy: identify
+   " [ngClass]="{even:isEven,odd:isOdd}">
+    {{ i + ': ' + item.name + ' isEven:' + isEven + ' isOdd:' + isOdd+ ' isFirst:' + isFirst + ' isLast:' + isLast}}
+</div>
+
+<br><br><br>
+<h3>Pipe</h3>
+<div>{{date | date:"yyyy-MM-dd"}}</div>
+
+<div>{{money | currency: "$"}}</div>
+
+<div>{{paragraph | summary:30}}</div>
