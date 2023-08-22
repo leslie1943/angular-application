@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarService } from './services/car.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,8 @@ export class AppComponent {
   getData(event: string) {
     alert(event);
   }
+
+  constructor(public carService: CarService) {}
 
   change() {
     this.name = 'moon';

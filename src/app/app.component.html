@@ -38,3 +38,21 @@ app-person name="zhangsan" [age]="age" (sendData)="getData($event)"
     <li>ngAfterViewChecked: 组件视图更新完成后执行</li>
     <li>ngOnDestroy:组件被销毁之前调用, 用于清理操作 </li>
 </ul>
+
+<br><br><br>
+<h3>依赖注入: 通过参数传递实例的方式叫注入</h3>
+<h4>DI框架 4个核心概念</h4>
+<ul>
+    <li>Dependency: 组件要依赖的实例对象, 服务实例对象</li>
+    <li>Token: 获取服务实例对象的标识</li>
+    <li>Injector: 注入器, 负责创建/维护服务类的实例对象并向组件中注入服务实例对象</li>
+    <li>Provider: 配置注入器的对象, 指定创建服务实例对象的服务类和获取实例对象的标识</li>
+</ul>
+
+
+<br><br><br>
+<h3>Service</h3>
+<p>AppDemoComponent 是在DemoModule中定义的, 如果想在其他的Module中使用, 需要在当前Module引入这个模块</p>
+<p>并且</p>
+<p>需要在DemoModule中 export AppDemoComponent这个组件</p>
+<app-demo></app-demo>

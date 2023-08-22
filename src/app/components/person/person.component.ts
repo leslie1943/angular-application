@@ -9,6 +9,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { TestService } from 'src/app/services/test.service';
 
 @Component({
   selector: 'app-person',
@@ -26,8 +27,9 @@ export class PersonComponent
   // 输出装饰器,这样在父组件中才能监听到
   @Output() sendData = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private testService: TestService) {
     console.info('constructor');
+    console.info('this.testService', this.testService.test);
   }
   ngAfterViewInit(): void {
     console.info('ngAfterViewInit');
