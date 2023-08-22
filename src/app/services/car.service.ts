@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { DemoModule } from '../demo/demo.module';
-import { AppModule } from '../app.module';
 
 @Injectable({
-  providedIn: AppModule,
+  providedIn: 'root',
 })
 export class CarService {
   carName: string = 'Benz';

@@ -1,0 +1,37 @@
+<p>form works!</p>
+<p>将DOM表单转化成 angular 表单</p>
+<p>为什么将一个普通的表单转化成 angular表单呢? 因为 angular表单下面提供了很多信息和方法</p>
+<p> #f是模板变量, #f代表的是 form DOM对象 然后给#f 赋值, 赋的值是固定的 'ngForm'</p>
+<p> f不再仅仅是一个DOM元素了,而是变成了 angular表单对象 </p>
+<form #f="ngForm" (submit)="onSubmit(f)">
+    <p>如果仅仅写一个input标签的话,这个表单项和这个表单没有任何关系</p>
+    <p>如何让这个表单项与表单产生关系呢? 表单项身上添加一个属性 'ngModel'</p>
+    <input type="text" name="username" ngModel>
+    <input type="text" name="password" ngModel>
+    <br><br>
+    <button class="btn btn-primary">Submit Form</button>
+</form>
+
+<br><br><br>
+<p> 表单分组 </p>
+<form #fg="ngForm" (submit)="onSubmitGroup(fg)">
+    <ng-container ngModelGroup="user">
+        <p>表单元素input的模板变量名称为#username="ngModel" ngModel是固定写法</p>
+        <!-- input的模板变量名称为username, ngModel是固定写法 -->
+        <input #username="ngModel" type="text" name="name" ngModel required minlength="2" maxlength="6">
+        <div *ngIf="username.touched && username.invalid && username.errors">
+            <!-- <div>{{username.errors | json}}</div> -->
+            <div *ngIf="username.errors['required']">请填写用户名</div>
+            <div *ngIf="username.errors['minlength']">至少{{username.errors["minlength"]["requiredLength"]}}个字符</div>
+            <div *ngIf="username.errors['maxlength']">至少六个字符</div>
+        </div>
+        <input type="text" name="password" ngModel>
+    </ng-container>
+    <ng-container ngModelGroup="contact">
+        <input type="text" name="phone" ngModel>
+        <input type="text" name="email" ngModel>
+    </ng-container>
+    <button class="btn btn-success" [disabled]="fg.invalid">Submit Form Group</button>
+</form>
+<!-- NgForm.control(FormGroup).controls -->
+<!-- 最小单元是 FormControl -->

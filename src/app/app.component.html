@@ -16,7 +16,6 @@
 
 <br><br><br>
 <h3>Child-Parent Component</h3>
-app-person name="zhangsan" [age]="age" (sendData)="getData($event)"
 <app-person [name]="name" [age]="age" [person]="person" (sendData)="getData($event)"></app-person>
 <button class="btn btn-primary" (click)="change()">Change</button>
 <br><br><br>
@@ -56,3 +55,13 @@ app-person name="zhangsan" [age]="age" (sendData)="getData($event)"
 <p>并且</p>
 <p>需要在DemoModule中 export AppDemoComponent这个组件</p>
 <app-demo></app-demo>
+
+
+<br><br><br>
+<h3>表单 Form</h3>
+<ul>
+    <li>模板驱动: 表单逻辑写在模板当中 component.html 文件中 </li>
+    <li>模型驱动: 表单逻辑写在组件类当中 component.ts 文件中 </li>
+</ul>
+
+<app-form></app-form>
