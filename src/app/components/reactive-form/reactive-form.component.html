@@ -1,0 +1,18 @@
+<br><br><br>
+<h3>表单 Form - 模型驱动</h3>
+<p><strong>FormControl(表单项)</strong>: 表单当中的每一个表单项都是<strong>FormControl</strong> </p>
+<p><strong>FormGroup(表单组)</strong>: 整个表单就是一个 <strong>FormGroup</strong>, 在 FormGroup 下 可以有 FormControl </p>
+<p><strong>FormArray</strong>: 用于复杂表单,可以动态添加表单项或者表单组, 在表单验证时, FormArray中有一项没通过, 整体就不会通过.</p>
+
+<h3>steps:</h3>
+<ul>
+    <li>引入ReactiveFormsModule</li>
+    <li>在组件类中创建FormGroup表单控制对象</li>
+    <li>关联组件模板中的表单</li>
+</ul>
+
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="phone">
+    <button>Submit</button>
+</form>
