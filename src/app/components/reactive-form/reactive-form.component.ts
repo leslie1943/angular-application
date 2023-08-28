@@ -8,8 +8,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ReactiveFormComponent {
   contactForm: FormGroup = new FormGroup({
-    name: new FormControl(),
-    phone: new FormControl(),
+    name: new FormControl('leslie'),
+    phone: new FormControl('13413132233'),
   });
 
   onSubmit() {

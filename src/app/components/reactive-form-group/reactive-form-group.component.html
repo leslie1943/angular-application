@@ -1,0 +1,17 @@
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+    <div formGroupName="name">
+        <input type="text" formControlName="username" />
+    </div>
+    <input type="text" formControlName="phone" />
+
+    <div>
+        <button class="btn btn-success">Submit</button>
+    </div>
+</form>
+
+<p>获取group value的几个方法</p>
+<ul>
+    <li>console.info(this.contactForm.get('name')?.value?.username);</li>
+    <li>console.info(this.contactForm.get(['name', 'username'])?.value);</li>
+    <li> console.info(this.contactForm.value.name.username);</li>
+</ul>
