@@ -6,6 +6,8 @@ import { BasePointComponent } from './components/base-point/base-point.component
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { ReactiveFormGroupComponent } from './components/reactive-form-group/reactive-form-group.component';
 import { ReactiveFormArrayComponent } from './components/reactive-form-array/reactive-form-array.component';
+import { ReactiveFormValidationComponent } from './components/reactive-form-validation/reactive-form-validation.component';
+import { ReactiveFormBuildComponent } from './components/reactive-form-build/reactive-form-build.component';
 
 const routes: Routes = [
   { path: '', component: BasePointComponent },
@@ -25,6 +27,14 @@ const routes: Routes = [
   {
     path: 'reactive-form-array',
     component: ReactiveFormArrayComponent,
+  },
+  {
+    path: 'reactive-form-validation',
+    component: ReactiveFormValidationComponent,
+  },
+  {
+    path: 'reactive-form-builder',
+    component: ReactiveFormBuildComponent,
   },
 ];
 

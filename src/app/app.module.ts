@@ -13,6 +13,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 import { BasePointComponent } from './components/base-point/base-point.component';
 import { ReactiveFormGroupComponent } from './components/reactive-form-group/reactive-form-group.component';
 import { ReactiveFormArrayComponent } from './components/reactive-form-array/reactive-form-array.component';
+import { ReactiveFormValidationComponent } from './components/reactive-form-validation/reactive-form-validation.component';
+import { ReactiveFormBuildComponent } from './components/reactive-form-build/reactive-form-build.component';
 
 @NgModule({
   // 指令应该属于某一个模块才能被使用. 所以在 declarations 属性中
@@ -27,6 +29,8 @@ import { ReactiveFormArrayComponent } from './components/reactive-form-array/rea
     BasePointComponent,
     ReactiveFormGroupComponent,
     ReactiveFormArrayComponent,
+    ReactiveFormValidationComponent,
+    ReactiveFormBuildComponent,
   ],
   // 如果不引用某个module,是无法在程序中使用的
   imports: [

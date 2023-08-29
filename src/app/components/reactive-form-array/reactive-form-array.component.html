@@ -1,1 +1,35 @@
-<p>reactive-form-array works!</p>
+<form [formGroup]="contactForm">
+    <!-- contacts使用的是 FormGroup里的属性  -->
+    <div formArrayName="contacts">
+        <!-- <div *ngFor="let contact of contactsArray.controls;let i=index" [formGroupName]="i"> -->
+        <div *ngFor="let contact of contactsControls;let i=index" [formGroupName]="i">
+            <input type="text" formControlName="name" />
+            <input type="text" formControlName="address" />
+            <input type="text" formControlName="phone" />
+            <button class="btn btn-success" (click)="removeContact(i)">删除此条目</button>
+        </div>
+    </div>
+    <button class="btn btn-success" (click)="addContact()">添加新条目</button>
+</form>
+
+<hr>
+<ul>
+    <li>1: 先绑定 formGroup</li>
+    <li>2: 再绑定 formArray</li>
+    <li>3: 然后再绑定 Array item里的 FormGroup</li>
+    <li>4: 然后再绑定 Array item里的 FormGroup 里的 FormControl</li>
+    <li>5: contacts.controls才是真正的集合,在这个集合当中绑定的才是FormGroup</li>
+</ul>
+
+<hr>
+<p>可以使用 contactsArray.controls 去循环</p>
+<pre>
+    div *ngFor="let contact of contactsArray.controls;let i=index" [formGroupName]="i">
+</pre>
+<p>也可以使用 现获取.formControls 再去循环</p>
+<pre> (this.contactForm.get('contacts') as FormArray).controls as FormControl[];</pre>
+<pre>
+    div *ngFor="let contact of contactsControls;let i=index" [formGroupName]="i">
+</pre>
+
+<img src="../../../assets//form-array.png" alt="">

@@ -1,0 +1,12 @@
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+    <input type="text" formControlName="name" />
+    <div *ngIf="name?.touched && name?.invalid && name?.errors">
+        <div *ngIf="name?.errors!['required']">请填写姓名</div>
+        <div *ngIf="name?.errors!['minlength']">姓名长度不能少于5</div>
+        <div *ngIf="name?.errors!['cannotContainSpace']">名字中不能包含空格</div>
+        <div *ngIf="name?.errors!['isUnique']">名字已经存在!</div>
+    </div>
+    <!-- FormControl pending 异步验证的属性 -->
+    <div *ngIf="name?.pending">正在验证...</div>
+    <button class="btn btn-success" [disabled]="contactForm.invalid || name?.pending">Submit</button>
+</form>
