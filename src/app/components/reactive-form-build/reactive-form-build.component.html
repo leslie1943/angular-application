@@ -4,3 +4,26 @@
     <li>this.fb.group: 表单组, 表达至少是一个FormGroup</li>
     <li>this.fb.array: 用于复杂表单,可以动态添加表单项或者表单组.</li>
 </ul>
+
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+    <div formGroupName="fullName">
+        <input type="text" formControlName="firstName" />
+        <input type="text" formControlName="lastName" />
+    </div>
+
+    <button class="btn btn-info">Submit</button>
+</form>
+
+<hr>
+<pre>
+// 仅仅使用 get 获取的是 FormGroup / FormArray / FormControl
+console.info('phone', this.contactForm.get('phone')); // FormControl
+console.info('contacts', this.contactForm.get('contacts')); // FormArray
+console.info('fullName', this.contactForm.get('fullName')); // FormGroup
+
+// 使用value获取的才是真正的value
+console.info('fullName', this.contactForm.get('fullName')?.value);
+console.info('firstName',this.contactForm.get('fullName')?.get('firstName')?.value);
+console.info('lastName',this.contactForm.get('fullName')?.get('lastName')?.value);
+console.info(this.contactForm.value);
+</pre>
