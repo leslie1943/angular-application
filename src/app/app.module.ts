@@ -7,7 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { HoverDirective } from './directives/hover.directive';
 import { PersonComponent } from './components/person/person.component';
 import { DemoModule } from './demo/demo.module';
-import { FormComponent } from './components/form/form.component';
+import { FormComponent } from './components/form-template-driven/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { BasePointComponent } from './components/base-point/base-point.component';

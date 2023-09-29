@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { FormComponent } from './components/form/form.component';
+import { FormComponent } from './components/form-template-driven/form.component';
 import { BasePointComponent } from './components/base-point/base-point.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { ReactiveFormGroupComponent } from './components/reactive-form-group/reactive-form-group.component';
