@@ -19,6 +19,7 @@
 
 <br><br><br>
 <p> 表单分组 </p>
+<!-- ngForm是固定写法 -->
 <form #fg="ngForm" (submit)="onSubmitGroup(fg)">
     <ng-container ngModelGroup="user">
         <p>表单元素input的模板变量名称为#username="ngModel" ngModel是固定写法</p>
