@@ -8,6 +8,7 @@ import { ReactiveFormGroupComponent } from './components/reactive-form-group/rea
 import { ReactiveFormArrayComponent } from './components/reactive-form-array/reactive-form-array.component';
 import { ReactiveFormValidationComponent } from './components/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormBuildComponent } from './components/reactive-form-build/reactive-form-build.component';
+import { FormDemoComponent } from './components/form-demo/form-demo.component';
 
 const routes: Routes = [
   { path: '', component: BasePointComponent },
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'reactive-form-builder',
     component: ReactiveFormBuildComponent,
+  },
+  {
+    path: 'form-demo',
+    component: FormDemoComponent,
   },
 ];
 

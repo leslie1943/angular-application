@@ -1,0 +1,26 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+    <label *ngFor="let item of Data">
+        <input type="checkbox" [value]="item.value" (change)="onChange($event)" />{{item.name}}
+    </label>
+    <button class="btn btn-primary" (click)="onSubmit()">提交</button>
+
+    <input type="radio" value="male" formControlName="gender">男
+    <input type="radio" value="female" formControlName="gender">女
+
+</form>
+
+<form [formGroup]="methodForm">
+    <input type="text" formControlName="firstName">
+    <input type="text" formControlName="lastName">
+    <div>
+        <button (click)="patchValue()" class="btn btn-primary">Patch Value</button>
+        <button (click)="setValue()" class="btn btn-primary">Set Value</button>
+        <button (click)="onReset()" class="btn btn-primary">Reset</button>
+    </div>
+    <!-- <div>
+        <button (click)="onMethodSubmit()" class="btn btn-primary">提交</button>
+    </div> -->
+    <div>
+
+    </div>
+</form>

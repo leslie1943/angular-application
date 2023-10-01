@@ -6,6 +6,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './reactive-form-build.component.html',
   styleUrls: ['./reactive-form-build.component.scss'],
 })
+/**
+ * this.fb.group({})
+ * this.fb.control('',validators)
+ * this.fb..array([]),
+ */
 export class ReactiveFormBuildComponent {
   contactForm!: FormGroup;
   constructor(private fb: FormBuilder) {
