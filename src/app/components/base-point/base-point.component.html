@@ -17,6 +17,7 @@
 <br><br><br>
 <h3>Child-Parent Component</h3>
 <app-person [name]="name" [age]="age" [person]="person" (sendData)="getData($event)"></app-person>
+{{person |json}}
 <button class="btn btn-primary" (click)="change()">Change</button>
 <br><br><br>
 <h3>生命周期</h3>

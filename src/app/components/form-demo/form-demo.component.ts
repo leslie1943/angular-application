@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 interface Data {
   name: string;
@@ -30,7 +31,7 @@ export class FormDemoComponent implements OnInit {
     lastName: new FormControl(''),
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private route: ActivatedRoute) {
     this.form = this.fb.group({
       checkArray: this.fb.array([]),
       gender: this.fb.control(''),

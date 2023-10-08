@@ -16,6 +16,10 @@ import { ReactiveFormArrayComponent } from './components/reactive-form-array/rea
 import { ReactiveFormValidationComponent } from './components/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormBuildComponent } from './components/reactive-form-build/reactive-form-build.component';
 import { FormDemoComponent } from './components/form-demo/form-demo.component';
+import { RoutesDemoComponent } from './components/routes-demo/routes-demo.component';
+import { AboutComponent } from './pages/about/about.component';
+import { CompanyComponent } from './pages/company/company.component';
+import { IndustryComponent } from './pages/industry/industry.component';
 
 @NgModule({
   // 指令应该属于某一个模块才能被使用. 所以在 declarations 属性中
@@ -33,6 +37,10 @@ import { FormDemoComponent } from './components/form-demo/form-demo.component';
     ReactiveFormValidationComponent,
     ReactiveFormBuildComponent,
     FormDemoComponent,
+    RoutesDemoComponent,
+    AboutComponent,
+    CompanyComponent,
+    IndustryComponent,
   ],
   // 如果不引用某个module,是无法在程序中使用的
   imports: [
